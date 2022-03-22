@@ -20,8 +20,9 @@ session_start();
 
     <p></p>
     <?php 
-        echo $user_data["full_name"];
+        echo $user_data["user_id"];
     ?>
     <a href="logout.php">Logout</a>
+    
 </body>
 </html> 
