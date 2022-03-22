@@ -1,0 +1,26 @@
+.bt{
+    flex: 1;
+    width: 20%;
+}
+.bt img{
+    width: 20vw;
+    height: 20vw;
+}
+.bt h5{
+    background: #001c3d;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5%;
+
+}
+
+.edit{
+    width: 100%;
+    width: 20vw;
+    color: white;
+    font-weight: bold;
+
+}
+.edit:hover{
+    transform: translateY(-15vw);
+}
