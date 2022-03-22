@@ -1,13 +1,13 @@
 
 
 .aim {
-    height: 80vh;
+    height: 60vh;
     width: 100%;
     background-color: beige;
 }
 
 .aim .aim-text {
-    padding-top: 6%;
+    padding-top: 5%;
     text-align: center;
 }
 
@@ -32,3 +32,78 @@
     margin-left: 48px;
     padding-top: 5%;
 }
+
+.news {
+    width: 100%;
+    height: 100vh;
+}
+
+.news .news-text {
+    text-align: center;
+    padding-top: 7%;
+}
+
+.news .news-text .title {
+   font-size: 2em;
+   font-weight: bold;
+}
+
+.news .row {
+    margin-top: 4%;
+}
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+    background-color: transparent;
+    width: 100px;
+    height: 480px;
+    perspective: 1000px; 
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front {
+    background-color: beige;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: beige;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .flip-box-back a {
+      text-decoration: none;
+      font-size: 2em;
+      font-weight: bold;
+      color: black;
+      position: absolute;
+      margin-top: 40%;
+      margin-left: -15%;
+
+  }
