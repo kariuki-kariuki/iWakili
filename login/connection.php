@@ -5,4 +5,6 @@ $dbuser = "root";
 $dbpass = "";
 $dbname = "iwakili_login";
 
-$con = msqli_connect($dbhost, $dbuser, $dbpass, $dbname); 
+if(!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)){
+    die("falied to connect");
+}

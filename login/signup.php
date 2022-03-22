@@ -1,9 +1,26 @@
 <?php
-    session_start();
-        include("connection.php");
-        include("function.php");
+session_start();
+    include("connection.php");
+    include("functions.php");
+    
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        // posted
+         $user_name = $_POST["userName"];
+         $full_name = $_POST['fName'];
+         $password = $_POST['psswd'];
+         
+         if (!empty($user_name)  && !empty($password) && !is_numeric($user_name ) && !empty($full_name)){
 
-
+            $user_id = randomm_num(20);
+            $query = "insert into users (user_id, user_name, full_name, password) values ('$user_id', '$user_name', '$full_name', '$password')";
+            
+            mysqli_query($query);
+            header("Location: login.php");
+         } else {
+         }
+    }
+ 
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +48,11 @@
                 </div>
                 <br>
                 <label for="fName">Full Name</label>
-                <input type="text" class="w3-input" required>
+                <input type="text" name = "fName" class="w3-input" required>
 
                 <br>
                 <label for="userName">Choose userName</label>
-                <input type="text" class="w3-input">
+                <input type="text" name = "userName" class="w3-input" requred>
 
                 <br>
                 <label for="psswd">Choose Password</label>
