@@ -12,10 +12,10 @@ session_start();
          
          if (!empty($user_name)  && !empty($password) && !is_numeric($user_name ) && !empty($full_name)){
 
-            $user_id = randomm_num(20);
+            $user_id = random_num(20);
             $query = "insert into users (user_id, user_name, full_name, password) values ('$user_id', '$user_name', '$full_name', '$password')";
             
-            mysqli_query($query);
+            mysqli_query($con,  $query);
             header("Location: login.php");
          } else {
          }
@@ -42,7 +42,7 @@ session_start();
 <body>
     <div class="container-fluid pt-5  text-white height">
         <div class="container d-flex justify-content-center ">
-            <form action="" method="post" class="half pt-5 w3-container bg-dark w3-card"> 
+            <form  method="POST" class="half pt-5 w3-container bg-dark w3-card"> 
                 <div class="w3-card-header p-3 w3-teal text-center">
                     <h1>SignUp</h1>
                 </div>
@@ -59,8 +59,8 @@ session_start();
                 <input type="password" name="psswd" class="w3-input" required>
 
                 <br>
-                <label for="psswd2" >Confirm Password</label>
-                <input type="password" password_hash class="w3-input" required password_hash>
+                <!-- <label for="psswd2" >Confirm Password</label> -->
+                <!-- <input type="password" password_hash class="w3-input" required password_hash> -->
 
                 <br>
                 <input type="submit" value="Submit" class="btn btn-primary">
