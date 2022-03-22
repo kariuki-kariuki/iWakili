@@ -18,7 +18,21 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <form action="" method="post" class=" w3-container bg-dark">  
+        <label for="fName"></label>
+        <input type="text" class="w3-input" required>
+
+        <label for="lName">Last Name</label>
+        <input type="text" class="w3-input" required>
+
+        <label for="userName">Choose userName</label>
+        <input type="text" class="w3-input">
+
+        <label for="psswd">Choose Password</label>
+        <input type="password" name="psswd" class="w3-input" required>
+    </form>
+    </div>
 
 </body>
 </html>
