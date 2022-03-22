@@ -19,31 +19,27 @@
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
-    <div class="container-fluid mt-5  text-white d-flex justify-content-center">
-        <form action="" method="post" class="half pt-5 w3-container bg-dark w3-card"> 
-            <div class="w3-card-header p-3 w3-teal text-center">
-                <h1>Login</h1>
-            </div>
-            <br>
-            <label for="fName">First Name</label>
-            <input type="text" class="w3-input" required>
+    <div class="container-fluid pt-5  text-white height">
+        <div class="container d-flex justify-content-center ">
+            <form action="" method="post" class="half pt-5 w3-container bg-dark w3-card fit-content"> 
+                <div class="w3-card-header p-3 w3-teal text-center">
+                    <h1>Login</h1>
+                </div>
+                <br>
+                <label for="fName">UserName</label>
+                <input type="text" class="w3-input" name="user_name" required>
 
-            <br>
-            <label for="lName">Last Name</label>
-            <input type="text" class="w3-input" required>
+                <br>
+                <label for="psswd">Password</label>
+                <input type="password" name="psswd" class="w3-input" required>
 
-            <br>
-            <label for="userName">Choose userName</label>
-            <input type="text" class="w3-input">
-
-            <br>
-            <label for="psswd">Choose Password</label>
-            <input type="password" name="psswd" class="w3-input" required>
-
-            <br>
-            <input type="submit" value="Submit" class="btn btn-primary">
-            <br><br>
-        </form>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+                <br>
+                <a href="signup.php" class="w3-input">SignUp</a>
+                <br><br>
+            </form>
+        </div>
     </div>
 
 </body>
