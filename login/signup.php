@@ -22,14 +22,10 @@
     <div class="container-fluid mt-5  text-white d-flex justify-content-center">
         <form action="" method="post" class="half pt-5 w3-container bg-dark w3-card"> 
             <div class="w3-card-header p-3 w3-teal text-center">
-                <h1>Login</h1>
+                <h1>SignUp</h1>
             </div>
             <br>
-            <label for="fName">First Name</label>
-            <input type="text" class="w3-input" required>
-
-            <br>
-            <label for="lName">Last Name</label>
+            <label for="fName">Full Name</label>
             <input type="text" class="w3-input" required>
 
             <br>
@@ -39,6 +35,10 @@
             <br>
             <label for="psswd">Choose Password</label>
             <input type="password" name="psswd" class="w3-input" required>
+
+            <br>
+            <label for="psswd2" >Confirm Password</label>
+            <input type="password" password_hash class="w3-input" required password_hash>
 
             <br>
             <input type="submit" value="Submit" class="btn btn-primary">
