@@ -22,7 +22,8 @@ session_start();
     <?php 
         echo $user_data["user_id"];
     ?>
-    <a href="logout.php">Logout</a>
+    <a href="logout.php">Logout</a> <br>
+    <a href="../questions/questions.php">Post a question</a>
     
 </body>
 </html> 

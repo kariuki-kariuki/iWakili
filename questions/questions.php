@@ -2,19 +2,23 @@
     session_start();
     include("../login/connection.php");
     include("../login/functions.php");
+    include("qfunctions.php");
+    include("qconnection.php");
     $user_data = check_login($con);
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         
         // posted
         $question = $_POST["que"];
-        if (!empty($user_name)  && !empty($password) && !is_numeric($user_name ) && !empty($full_name)){
+        $poster_id = $user_data['user_id'];
+        echo $poster_id, $question;
+        if (!empty($question)){
             $question_id = randomId(17);
-            $poster = $user_data['user_id'];
-            $query = "insert into users (user_id, user_name, full_name, password) values ('$user_id', '$user_name', '$full_name', '$password')";
+            echo $question_id;
+            $querys = "insert into questions (question, question_id, poster_id) values ('$question', '$question_id', '$poster_id')";
             
-            mysqli_query($con,  $query);
-            header("Location: login.php");
+            mysqli_query($con,  $querys);
+            header("Location: ../login/index.php");
             die;
         } else {
 
