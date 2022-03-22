@@ -1,24 +1,24 @@
 <?php
-session_start();
+    session_start();
     include("connection.php");
     include("functions.php");
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         
         // posted
-         $user_name = $_POST["userName"];
-         $full_name = $_POST['fName'];
-         $password = $_POST['psswd'];
-         
-         if (!empty($user_name)  && !empty($password) && !is_numeric($user_name ) && !empty($full_name)){
-
-            $user_id = randomm_num(20);
+        $full_name = $_POST["fName"];
+        $user_name = $_POST["userName"];
+        $password = $_POST['psswd'];
+        if (!empty($user_name)  && !empty($password) && !is_numeric($user_name ) && !empty($full_name)){
+            $user_id = random_num(20);
             $query = "insert into users (user_id, user_name, full_name, password) values ('$user_id', '$user_name', '$full_name', '$password')";
             
             mysqli_query($con,  $query);
             header("Location: login.php");
-         } else {
-         }
+            die;
+        } else {
+
+        }
     }
  
 ?>

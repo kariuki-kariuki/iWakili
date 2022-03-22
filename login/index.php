@@ -2,7 +2,7 @@
 session_start();
     include("connection.php");
     include("functions.php");
-    check_login($con)
+    $user_data = check_login($con);
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,14 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    <p>Hello World</p>
+    <p>Hello 
+    </p>
+        <?php echo $user_data["user_name"]; ?>
+
+    <p></p>
+    <?php 
+        echo $user_data["full_name"];
+    ?>
+    <a href="logout.php">Logout</a>
 </body>
 </html> 
