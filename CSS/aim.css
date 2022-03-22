@@ -1,5 +1,4 @@
 
-
 .aim {
     height: 60vh;
     width: 100%;
@@ -112,7 +111,7 @@
 
   /* * contact section styling */ */
   .contact {
-    height: 100vh;
+    height: 70vh;
     width: 100%;
   }
 .contact .title{
@@ -209,4 +208,8 @@
 .right form .button-area button:hover{
   color: teal;
   background: none;
+}
+
+.contact .foot {
+  background-color: #333;
 }
