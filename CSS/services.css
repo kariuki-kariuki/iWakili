@@ -5,6 +5,7 @@
 .bt img{
     width: 20vw;
     height: 15vw;
+    
 }
 .bt h5{
     background: #63666A;
@@ -23,6 +24,7 @@
 }
 .edit:hover{
     transform: translateY(-15vw);
+    
 }
 /* Float four columns side by side */
 .column {
@@ -47,4 +49,12 @@
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+  }
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
   }
