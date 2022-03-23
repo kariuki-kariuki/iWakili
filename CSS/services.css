@@ -76,7 +76,7 @@ background-color: lightgray;
   .iconA {
     position: relative;
     left: 200px;
-    margin-inline: .5vh;
+    margin-inline: .1vh;
   }
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
@@ -86,8 +86,8 @@ background-color: lightgray;
       margin-bottom: 20px;
     }
   }
-  span i{
-    color: red;
+  h5 i{
+    color: yellow;
     margin-right: 1vw;
   }
   
