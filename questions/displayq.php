@@ -5,6 +5,25 @@
     include("qfunctions.php");
     include("qconnection.php");
     $user_data = check_login($con);
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        // posted
+        $question = $_POST["que"];
+        $poster_id = $user_data['user_id'];
+        echo $poster_id, $question;
+        if (!empty($question)){
+            $question_id = randomId(17);
+            echo $question_id;
+            $querys = "insert into questions (question, question_id, poster_id) values ('$question', '$question_id', '$poster_id')";
+            
+            mysqli_query($con,  $querys);
+            header("Location: ../login/index.php");
+            die;
+        } else {
+
+        }
+    }
  
 ?>
 
@@ -33,7 +52,36 @@
 
             if($result -> num_rows > 0){
                 while($row = $result -> fetch_assoc()){
-                    echo "<span>". $row["question_id"]."</span> <span>". $row["poster_id"]."</span><span>". $row["question"]."</span";
+                    echo 
+                    
+                    '<div class="container-fluid mb-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>'.$row['question'].'</h3>
+                                    <span onclick="showthis('.$row['question_id'].')" class="w3-button w3-display-topright bg-dark" style = "z-index: 1; background-color: black; color: white;")>Answer</span>
+
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="w3-modal bg-dark text-white" id = "'.$row['question_id'].'">
+                        <div class="container-fluid  pt-5">
+                            <div class="container-fluid  pt-5">
+                                <h1>We Value Your Feedback</h1>
+                            </div>
+
+                            <form class="container-fluid pb-5" method="post">
+                                <label for="">Answering for <span>'.$row['question'].'</span></label>
+                                <select name="q_id" class="d-none">
+                                    <option value="'.$row['question_id'].'">question</option>
+                                </select>
+                                <input type="text" class="w3-input">
+                                <br><br>
+                                <input type="button" value="submit" class="btn btn-primary">
+                                <span onclick="hidethis('.$row['question_id'].')" class="w3-button w3-display-topright bg-dark" style = "z-index: 200; background-color: black; color: white;")>&times;</spa    
+                            </form>
+                        </div>
+                    </div>';
                 }
             } else {
                 echo "zero rows";
@@ -41,5 +89,37 @@
         ?>
         
     </div>
+
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h3>My question goes here</h3>
+            </div>
+            <div class="w3-modals">
+                <div class="container-fluid pt-5">
+                    <form class="container-fluid pb-5" method="post">
+                        <label for="">Answering for <span>Answer</span></label>
+                        <select name="q_id" id="">
+                            <option value="question-id">question</option>
+                        </select>
+                        <input type="text" class="w3-input">
+                        <br><br>
+                        <input type="button" value="submit" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <script>
+                 function hidethis(param){
+
+                     $("#"+ param).hide("slow");
+                 }
+
+                 function showthis(param2){
+                     $("#"+ param2).show();
+                 }
+            </script>
 </body>
 </html>
