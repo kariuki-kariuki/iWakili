@@ -29,13 +29,25 @@ background-color: lightgray;
   
 }
 
-/* .edit p{
+.edit p{
   display: none;
-} */
+  color: white;
+} 
+
 .edit:hover{
-    transform: translateY(-15vw);
+   animation: move-up 1s ease-out 1 forwards;
     
 }
+
+@keyframes move-up{
+0%{
+  transform: translateY(0);
+  }
+100%{
+  transform: translateY(-15vw);
+}
+}
+
 /* Float four columns side by side */
 .column {
     float: left;
@@ -61,7 +73,7 @@ background-color: lightgray;
     background-color: #f1f1f1;
   }
   
-  .fa {
+  .icons {
     position: relative;
     left: 200px;
     margin-inline: .5vh;
@@ -73,5 +85,9 @@ background-color: lightgray;
       display: block;
       margin-bottom: 20px;
     }
+  }
+  span i{
+    color: red;
+    margin-right: 1vw;
   }
   
