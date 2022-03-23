@@ -24,7 +24,9 @@ session_start();
     ?>
     <a href="logout.php">Logout</a> <br>
     <a href="../questions/questions.php">Post a question</a> <br>
-    <a href="../questions/displayq.php">See questions</a>
+    <a href="../questions/displayq.php">See questions</a> <br><br>
+    <a href="../profile/profile.php">See profile</a> <br><br>
+
     
 </body>
 </html> 

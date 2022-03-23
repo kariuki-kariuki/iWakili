@@ -1,7 +1,7 @@
 <?php
 	session_start();
-    include("../login/connection.php");
-    include("../login/functions.php");
+    include("login/connection.php");
+    include("login/functions.php");
     $user_data = check_login($con);
 
   // Create database connection
@@ -19,9 +19,9 @@
   	$image_text = mysqli_real_escape_string($db, $_POST['text']);
 
   	// image file directory
-  	$target = "../images-uploads/".basename($image);
+  	$target = "images-uploads/".basename($image);
 
-  	$sql = "INSERT INTO profile (image, text, user_id) VALUES ('$image', '$image_text', $user_id)";
+  	$sql = "INSERT INTO images (image, text, user_id) VALUES ('$image', '$image_text', $user_id)";
   	// execute query
   	mysqli_query($db, $sql);
 
@@ -31,7 +31,7 @@
   		$msg = "Failed to upload image";
   	}
   }
-  $result = mysqli_query($db, "SELECT * FROM profile");
+  $result = mysqli_query($db, "SELECT * FROM images");
 ?>
 
 <!DOCTYPE html>
