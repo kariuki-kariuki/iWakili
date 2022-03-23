@@ -1,0 +1,29 @@
+form {
+    border: 1px solid black;
+    width: 800px;
+    height: 770px;
+    box-shadow: 3px 3px 5px grey;
+    margin-left: 10%;
+}
+
+label {
+    padding-left: 10px;
+}
+
+
+.btn {
+    margin-left: 40%;
+}
+
+
+  /* Border Radius img */
+  .card-body .image #myImg {
+    border-radius: 50%;
+    margin-left: -10%;
+
+}
+
+/* .card-body h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+} */
