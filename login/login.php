@@ -1,6 +1,42 @@
 <?php
+    session_start();
+    include("connection.php");
+    include("functions.php");
+    
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        // posted
+         $user_name = $_POST["user_name"];
+         $password = $_POST['psswd'];
+         
+         if (!empty($user_name)  && !empty($password) && !is_numeric($user_name )){
 
+            $query = "select * from users where user_name = '$user_name' limit 1";
+            $result = mysqli_query($con, $query);
+
+            if($result){
+                if($result && mysqli_num_rows($result) > 0){
+                    $user_data = mysqli_fetch_assoc($result);
+
+                    if($user_data["password"] === $password){
+                        
+                        $_SESSION['user_id'] = $user_data["user_id"]; 
+                        header("Location: index.php");
+                        die;
+                    }
+
+                    echo("Wrong user name or password");
+
+                }
+            }
+            
+         } else {
+         }
+    }
+ 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,23 +52,32 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../CSS/login.css" >
 </head>
-<body>
-    <div class="container-fluid">
-        <form action="" method="post" class=" w3-container bg-dark">  
-        <label for="fName"></label>
-        <input type="text" class="w3-input" required>
+<html>
+    <body>
+        <div class="container-fluid pt-5  text-white height">
+            <div class="container d-flex justify-content-center ">
+                <form action="" method="post" class="half pt-5 w3-container bg-dark w3-card fit-content"> 
+                    <div class="w3-card-header p-3 w3-teal text-center">
+                        <h1>Login</h1>
+                    </div>
+                    <br>
+                    <label for="fName">UserName</label>
+                    <input type="text" class="w3-input" name="user_name" required>
 
-        <label for="lName">Last Name</label>
-        <input type="text" class="w3-input" required>
+                    <br>
+                    <label for="psswd">Password</label>
+                    <input type="password" name="psswd" class="w3-input" required>
 
-        <label for="userName">Choose userName</label>
-        <input type="text" class="w3-input">
+                    <br>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <br>
+                    <a href="signup.php" class="w3-input">SignUp</a>
+                    <br><br>
+                </form>
+            </div>
+        </div>
 
-        <label for="psswd">Choose Password</label>
-        <input type="password" name="psswd" class="w3-input" required>
-    </form>
-    </div>
-
-</body>
+    </body>
 </html>
