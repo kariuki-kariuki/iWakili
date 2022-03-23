@@ -5,6 +5,7 @@
     height: 60vh;
     width: 100%;
     background-color: beige;
+    margin-top: 6%;
 }
 
 .aim .aim-text {
@@ -53,6 +54,9 @@
 
 .news .row {
     margin-top: 4%;
+    margin-left: 8.5%;
+    position: absolute;
+    justify-content: space-around;
 }
 
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -66,7 +70,7 @@
   /* This container is needed to position the front and back side */
   .flip-box-inner {
     position: relative;
-    width: 100%;
+    width: 400px;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
@@ -115,19 +119,52 @@
 
   /* * contact section styling */ */
   .contact {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
   }
+
 .contact .title{
+    position: relative;
     text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
 }
+
+.contact .title:before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+.contact .title:after{
+    content: "get in touch";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 18px;
+    color: teal;
+    padding: 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
 .contact .contact-content .col{
     width: calc(50% - 30px);
 }
 .contact .contact-content .text{
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 10px;
+}
+    
+.contact .contact-content .left {
+   margin-left: 5%;
 }
 .contact .contact-content .left p{
     text-align: justify;
@@ -216,3 +253,14 @@
 
 
 
+
+
+
+@media (max-width: 300px){
+    .news {
+        height: 150px;
+    }
+    .contact {
+        height: 50vh;
+    }
+}
