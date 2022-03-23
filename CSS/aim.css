@@ -121,7 +121,7 @@
 .contact .title{
     text-align: center;
 }
-.contact .contact-content .column{
+.contact .contact-content .col{
     width: calc(50% - 30px);
 }
 .contact .contact-content .text{

@@ -12,3 +12,12 @@ window.addEventListener('load', function() {
         }
     });
   });
+
+
+  $(document).ready(function(){
+    $("image").click(function(){
+        $("input").hide();
+      });
+
+      
+  })
