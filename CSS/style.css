@@ -1,0 +1,62 @@
+
+/* landing page */
+.hero{
+    background-color: #0a192f;
+}
+
+.icons{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* .social{
+    height: 100%;
+} */
+.social .fab{
+   
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 13px;
+    margin: 0 -2px;
+}
+.card{
+    box-shadow: rgba(173, 166, 166, 0.25) 0px 5px 5px 2px;
+    border: none;
+    background-color: white;
+    transition: all 0.5s linear;
+    /* height: 100%; */
+    margin-top: -100px;
+    border-radius: 0;
+}
+.card:hover{
+    
+    cursor: pointer;
+    animation: move-up 0.5s linear;
+    transform: translateY(-20px);
+    
+}
+.card2{
+    box-shadow: rgba(173, 166, 166, 0.25) 0px 5px 5px 2px;
+    border: none;
+    background-color: rgb(168, 168, 127);
+    transition: all 0.5s linear;
+    /* height: 100%; */
+    margin-top: -100px;
+    border-radius: 0;
+}
+.card2:hover{
+    
+    cursor: pointer;
+    animation: move-up 0.5s linear;
+    transform: translateY(-20px);
+    
+}
+.custom-padding{
+    padding: 0 120px !important;
+}
+@media screen and (max-width:768px) {
+    .card, .card2{
+        margin-top: 0;
+    }
+    .custom-padding{
+        padding: 0 8px !important;
+    }
+    
+}
