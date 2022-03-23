@@ -35,12 +35,14 @@
 .card2{
     box-shadow: rgba(173, 166, 166, 0.25) 0px 5px 5px 2px;
     border: none;
-    background-color: rgb(168, 168, 127);
+    /* background-color: hsl(217, 47%, 57%); */
     transition: all 0.5s linear;
+    color: white;
     /* height: 100%; */
     margin-top: -100px;
     border-radius: 0;
 }
+
 .card2:hover{
     
     cursor: pointer;
