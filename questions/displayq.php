@@ -9,15 +9,15 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         
         // posted
-        $question = $_POST["que"];
-        $poster_id = $user_data['user_id'];
-        echo $poster_id, $question;
-        if (!empty($question)){
-            $question_id = randomId(17);
-            echo $question_id;
-            $querys = "insert into questions (question, question_id, poster_id) values ('$question', '$question_id', '$poster_id')";
+        $answer = $_POST["answer"];
+        $question_id = $_POST['q_id'];
+        $responder_id = $user_data['user_id'];
+        // echo $answer, $question_id, $responder_id;
+        if (!empty($answer) && !empty($question_id) && !empty($responder_id)){
+            $answer_id = randomAns(19);
+            $queryys = "insert into answers (answer, question_id, responder_id, answer_id) values ('$answer', '$question_id', '$responder_id', $answer_id)";
             
-            mysqli_query($con,  $querys);
+            mysqli_query($con,  $queryys);
             header("Location: ../login/index.php");
             die;
         } else {
@@ -69,17 +69,11 @@
                             <div class="container-fluid  pt-5">
                                 <h1>We Value Your Feedback</h1>
                             </div>
+                            <span id="btn'.$row['question_id'].'" class="w3-button w3-display-topright bg-dark" style = "z-index: 1; background-color: black; color: white;")>x</span>
 
-                            <form class="container-fluid pb-5" method="post">
-                                <label for="">Answering for <span>'.$row['question'].'</span></label>
-                                <select name="q_id" class="d-none">
-                                    <option value="'.$row['question_id'].'">question</option>
-                                </select>
-                                <input type="text" class="w3-input">
-                                <br><br>
-                                <input type="button" value="submit" class="btn btn-primary">
-                                <span onclick="hidethis('.$row['question_id'].')" class="w3-button w3-display-topright bg-dark" style = "z-index: 200; background-color: black; color: white;")>&times;</spa    
-                            </form>
+                            <div class="apend-here'.$row['question_id'].'">
+                            
+                            </div>
                         </div>
                     </div>';
                 }
@@ -90,36 +84,6 @@
         
     </div>
 
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-header">
-                <h3>My question goes here</h3>
-            </div>
-            <div class="w3-modals">
-                <div class="container-fluid pt-5">
-                    <form class="container-fluid pb-5" method="post">
-                        <label for="">Answering for <span>Answer</span></label>
-                        <select name="q_id" id="">
-                            <option value="question-id">question</option>
-                        </select>
-                        <input type="text" class="w3-input">
-                        <br><br>
-                        <input type="button" value="submit" class="btn btn-primary">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-            <script>
-                 function hidethis(param){
-
-                     $("#"+ param).hide("slow");
-                 }
-
-                 function showthis(param2){
-                     $("#"+ param2).show();
-                 }
-            </script>
+    <script src="questions.js"></script>
 </body>
 </html>
