@@ -6,9 +6,7 @@
 .icons-ik{
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* .social{
-    height: 100%;
-} */
+
 .social-ik .fab{
    
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -20,7 +18,6 @@
     border: none;
     background-color: white;
     transition: all 0.5s linear;
-    /* height: 100%; */
     margin-top: -100px;
     border-radius: 0;
 }
@@ -34,10 +31,10 @@
 .card2-ik{
     box-shadow: rgba(173, 166, 166, 0.25) 0px 5px 5px 2px;
     border: none;
-    /* background-color: hsl(217, 47%, 57%); */
+   
     transition: all 0.5s linear;
     color: white;
-    /* height: 100%; */
+   
     margin-top: -100px;
     border-radius: 0;
 }
