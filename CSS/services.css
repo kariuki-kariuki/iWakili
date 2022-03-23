@@ -1,0 +1,93 @@
+/* .bg{
+background-color: lightgray;
+
+} */
+
+.bt{
+    flex: 1;
+    width: 20%;
+    /* margin-top: 10%; */
+}
+.bt img{
+    width: 20vw;
+    height: 15vw;
+    
+}
+.bt h5{
+    background: #63666A;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5%;
+
+}
+
+.edit{
+    width: 100%;
+    width: 20vw;
+    color: white;
+    font-weight: bold;
+  
+}
+
+.edit p{
+  display: none;
+  color: white;
+} 
+
+.edit:hover{
+   animation: move-up 1s ease-out 1 forwards;
+    
+}
+
+@keyframes move-up{
+0%{
+  transform: translateY(0);
+  }
+100%{
+  transform: translateY(-15vw);
+}
+}
+
+/* Float four columns side by side */
+.column {
+    /* float: left; */
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .icons {
+    position: relative;
+    left: 200px;
+    margin-inline: .5vh;
+  }
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  span i{
+    color: red;
+    margin-right: 1vw;
+  }
+  
