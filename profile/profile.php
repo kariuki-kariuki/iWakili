@@ -5,33 +5,34 @@
     $user_data = check_login($con);
 
   // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "iwakili_login");
-
-  // Initialize message variable
-  $msg = "";
-
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-  	// Get image name
-  	$image = $_FILES['image']['name'];
-  	// Get text
-	$user_id = $user_data['user_id'];
-  	$image_text = mysqli_real_escape_string($db, $_POST['text']);
-
-  	// image file directory
-  	$target = "../images-uploads/".basename($image);
-
-  	$sql = "INSERT INTO profile (image, text, user_id) VALUES ('$image', '$image_text', $user_id)";
-  	// execute query
-  	mysqli_query($db, $sql);
-
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-  		$msg = "Image uploaded successfully";
-  	}else{
-  		$msg = "Failed to upload image";
+  	$db = mysqli_connect("localhost", "root", "", "iwakili_login");
+	
+  	// Initialize message variable
+  	$msg = "";
+	
+  	// If upload button is clicked ...
+  	if (isset($_POST['upload'])) {
+  		// Get image name
+  		$image = $_FILES['image']['name'];
+  		// Get text
+		$user_id = $user_data['user_id'];
+  		$image_text = mysqli_real_escape_string($db, $_POST['text']);
+  		$image_text2 = mysqli_real_escape_string($db, $_POST['text2']);
+	
+  		// image file directory
+  		$target = "../images-uploads/".basename($image);
+	
+  		$sql = "INSERT INTO profile (image, text, user_id, location) VALUES ('$image', '$image_text', '$user_id', '$image_text2')";
+  		// execute query
+  		mysqli_query($db, $sql);
+	
+  		if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+  			$msg = "Image uploaded successfully";
+  		}else{
+  			$msg = "Failed to upload image";
+  		}
   	}
-  }
-  $result = mysqli_query($db, "SELECT * FROM profile");
+  	$result = mysqli_query($db, "SELECT * FROM profile");
 ?>
 
 <!DOCTYPE html>
@@ -48,27 +49,47 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="profile.css">
 </head>
 <body>
-      <form method="POST" action="profile.php" enctype="multipart/form-data">
-  	<input type="hidden" name="size" value="1000000">
-  	<div>
-  	  <input type="file" name="image">
-  	</div>
-  	<div>
-      <textarea 
-      	id="text" 
-      	cols="40" 
-      	rows="4" 
-      	name="text" 
-      	placeholder="Enter your proffession..."></textarea>
-  	</div>
-  	<div>
-  		<button type="submit" name="upload">POST</button>
-  	</div>
-  </form>
-</div>
+  		<div class="container-fluid bg-dark one d-flex align-items-center">
+			  
+      		<div class="container-fluid fifty bg-black text-white p-0">
+				 <div class="card-header w3-teal text-center">
+					  <h1>PROFILE</h1>
+			  	</div>
+				<form method="POST" action="profile.php" class="container-fluid" enctype="multipart/form-data">
+  					<input type="hidden" name="size" value="1000000">
+  					<div class="p-2">
+
+						<label for="">Choose Image</label>
+						<br><br>
+  					  	<input type="file" name="image" class = "btn btn-secondary form-control">
+  					</div>
+					  <hr>
+  					<div class="p-2">
+						  <label for="">Proffession</label><br><br>
+    				  	<input 
+						  class = "w3-input"
+    				  		id="text" 
+    				  		name="text" 
+    				  		placeholder="Enter your proffession...">
+  					</div>
+					  <hr>
+
+					  <div class="p-2">
+						  	<label for="">Location</label>
+							  <br><br>
+    				  		<input class = "w3-input" id="text2" name="text2" placeholder="Enter your Location...">
+  					</div>
+  					<div class= "pb-5 pt-2">
+  						<button type="submit" name="upload" class="btn btn-primary m-2">POST</button>
+
+  					</div>
+  				</form>
+			</div>
+		</div>
 </body>
 </html>
 
-</body>
+</body
