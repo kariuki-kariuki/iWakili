@@ -32,7 +32,7 @@ height: 30vh;
 
 .edit p{
   display: none;
-  color: white;
+  color: red;
 } 
 
 .edit:hover{
