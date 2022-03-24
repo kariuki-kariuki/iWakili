@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 
 .mybtns{
     background: rgba(0, 0, 0, .5);
@@ -25,4 +26,18 @@
 
 .height{
     height: 100%;
+}
+
+.name{
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 1.5em;
+    color: red;
+}
+
+.red{
+    color:  #ff0000;
+}
+
+.profile-img{
+    border-radius: 50%;
 }
