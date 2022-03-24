@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 
@@ -34,10 +36,29 @@
     color: red;
 }
 
+.about{
+    width: fit-content;
+    border-radius: 20px;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid blue;
+}
+
 .red{
     color:  #ff0000;
 }
 
 .profile-img{
     border-radius: 50%;
+    border: 1px solid #ff0000;
 }
+
+.height1{
+    height: 90vh;
+    background: linear-gradient(180deg, blue 35%, black 35%);
+}
+
+.another{
+    height: 86vh;
+}
+
