@@ -4,6 +4,16 @@
     include("functions.php");
     $user_data = check_login($con);
 
+
+    $sql = "SELECT * from questions";
+    $sql1 = "SELECT * from answers";
+    $sql2 = "SELECT * from  users";
+
+    $result = $con -> query($sql);
+    $results = $con -> query($sql1);
+    $result3 = $con -> query($sql2)
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,22 +40,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2 ">
-                        <h1 class="name">iWakili</h1>
+                        <h1 class="name d-none d-md-block d-lg-block d-xl-block">iWakili</h1>
                     </div>
                     <div class="col-sm-4">
                         <div class="-container-fluid d-flex justify-content-around align-items-center height">
-                            <i class="fa fa-home fa-fw  size- px-5 text-white"></i>
+                            <i class="fa fa-home fa-fw  size- px-5 text-white d-none d-md-block d-lg-block d-xl-block"></i>
                             <a href="../questions/questions.php"><i class="fa fa-clipboard-list fa-fw  size- px-5 text-white"></i></a>
                             <a href="../questions/displayq.php"><i class="fa fa-highlighter fa-fw  size- px-5 text-white"></i></a>
-                            <i class="fa fa-user-friends fa-fw  size- px-5 text-white"></i>
-                            <i class="fa fa-bell fa-fw red size- px-5 "></i>
+                            <i class="fa fa-user-friends fa-fw  size- px-5 text-white d-none d-md-block d-lg-block d-xl-block"></i>
+                            <i class="fa fa-bell fa-fw red size- px-5 d-none d-md-block d-lg-block d-xl-block"></i>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="container-fluid d-flex justify-content-between align-items-center height">
-                            <input type="search" name="search" id="search" class="bg-black" placeholder="search">
-                            <button class="mybtns">learn-more + </button>
-                            <span class="iconify" data-icon="bi:person-circle" style="color: #99f;"></span>
+                            <input type="search" name="search" id="search" class="bg-black d-none d-md-block d-lg-block d-xl-block" placeholder="search">
+                            <button class="mybtns ">learn-more + </button>
+                            <span class="iconify d-none d-md-block d-lg-block d-xl-block" data-icon="bi:person-circle" style="color: #99f;"></span>
                             <a href="logout.php"><button class="btn btn-danger">Log Out</button></a>
                         </div>
                     </div>
@@ -56,7 +66,7 @@
             <div class="row">
                 <hr>
                 <hr>
-                <div class="col-sm-3 p-0">
+                <div class="col-sm-3 p-0 d-none d-md-block d-lg-block d-xl-block">
                     <div class="container-fluid bg-dark text-white p-2 overflow-auto rounded-lg another">
                         <div class="p-5  justify-content-around d-flex  height1">
                             <div class="image pb-5 text-center text-white">
@@ -93,24 +103,57 @@
                             </div>
                             <hr>
                         </div>
-                        <div class="container-fluid answers bg-dark pt-2 mb-2">
-                            <div class="poster">
-                                <img src="../services_images/man-lawyer1.png" alt="" width="50px" height="50px" class="img-fluid borders">
-                            </div>
-                            <div class="answer-text py-2">
-                                <h3 class="question">
-                                    What are the happiest pictures you have seen?
-                                </h3>
-                                <p>
-                                    Finding happiness in life doesn’t have to be complicated. In fact, it can be simple as looking at a picture. A smile
-                                    just might creep onto your face, in fact, if you look at any of the 25 photos below. They may be some of the happiest
-                                    pictures online, and they’re bound to inspire you to smile. Life is good. Especially when you think about…
+                            
+                            <?php
 
-                                </p>
-                                <button class="btn btn-primary">Readmore</button>
-                                <br>
-                            </div>
-                        </div>
+                                    $sql = "SELECT * from questions";
+                                                                
+                                    $result = $con -> query($sql);
+                                    while($row = $result -> fetch_assoc()){
+                                        echo '
+                                        <div class="container-fluid answers bg-dark pt-2 mb-2">
+                                        
+                                            <div class="poster">
+                                                <img src="../services_images/man-lawyer1.png" alt="" width="50px" height="50px" class="img-fluid borders">
+                                            </div>
+                                            <div class="answer-text py-2"> 
+                                                <h3 class="question">
+                                                    '.$row['question'].'         
+                                                </h3>
+                                        ';
+                                        $count = 0;
+                                        $ans = $row['question_id'];
+                                        $sql1 = "SELECT responder_id, answer from answers where question_id = '$ans'";
+                                        $results = $con -> query($sql1);
+
+                                        
+                                        while($row2 = $results -> fetch_assoc()){
+                                            $count += 1;
+                                                echo '
+                                                <p class="ans"> Answer ' .$count.'
+                                                
+                                                <p>';
+                                                $id = $row2['responder_id'];
+                                                $sql2 = "SELECT user_name from  users where user_id = '$id'";
+                                                $result3 = $con -> query($sql2);
+
+                                                while($row3 = $result3 -> fetch_assoc()){
+                                                    echo '<p> Answered by '.$row3['user_name'].' </p>';
+                                                }
+                                                echo
+                                                    ''.$row2['answer'].'
+                                                </p>';                                                
+                                    }
+                                   echo ' <button class="btn btn-primary">Readmore</button>
+
+                                                <br><br>
+                                    </div>  
+                                 </div>';
+                                }
+                                
+                            ?>
+
+                    
 
                         <div class="container-fluid answers bg-dark pt-2 mb-2">
                             <div class="poster">
@@ -136,7 +179,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-2 d-none d-md-block d-lg-block d-xl-block">
                     <div class="px-4 text-white fit-content">
                         <div class="item1">
                             <p>Spaces</p>

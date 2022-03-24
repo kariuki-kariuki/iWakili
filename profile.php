@@ -34,6 +34,21 @@
   $result = mysqli_query($db, "SELECT * FROM images");
 ?>
 
+while($row2 = $results -> fetch_assoc() && $row3 = $result3 -> fetch_assoc()){
+                                            $count += 1;
+                                            echo "working";
+                                            if($row['question_id'] === $row2['question_id'] && $row2['responder_id'] === $row3['user_id']) {
+                                                echo '
+                                                <p> ' .$count.'
+                                                <p>
+                                                    '.$row2['answer'].'
+                                                </p>';
+                                            } else {
+                                                echo '<p> Not answerd</p>';
+                                            }
+                                                
+                                        }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
