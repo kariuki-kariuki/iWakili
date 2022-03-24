@@ -25,7 +25,8 @@
   		$sql = "INSERT INTO profile (image, text, user_id, location) VALUES ('$image', '$image_text', '$user_id', '$image_text2')";
   		// execute query
   		mysqli_query($db, $sql);
-	
+            header("Location: ../login/index.php");
+		
   		if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
   			$msg = "Image uploaded successfully";
   		}else{
