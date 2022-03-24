@@ -1,6 +1,7 @@
 /* landing page */
 .hero-ik{
     background-color: #0a192f;
+    height: 90vh;
 }
 
 .icons-ik{
@@ -13,6 +14,14 @@
     padding: 15px 13px;
     margin: 0 -2px;
 }
+.hero-ik img{
+    box-shadow: 0;
+}
+.hero-ik img:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    /* background: blue; */
+}
 .card-ik{
     box-shadow: rgba(173, 166, 166, 0.25) 0px 5px 5px 2px;
     border: none;
@@ -24,7 +33,7 @@
 .card-ik:hover{
     
     cursor: pointer;
-    animation: move-up 0.5s linear;
+    /* animation: move-up 0.5s linear; */
     transform: translateY(-20px);
     
 }
@@ -42,12 +51,40 @@
 .card2-ik:hover{
     
     cursor: pointer;
-    animation: move-up 0.5s linear;
+    /* animation: move-up 0.5s linear; */
     transform: translateY(-20px);
     
 }
 .custom-padding-ik{
     padding: 0 120px !important;
+}
+.vision-ik::after{
+    content: "";
+    width: 200px;
+    height: 6px;
+    background-color: #0077ff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 25px;
+    /* border-radius: 10%; */
+    position: absolute;
+}
+.about-us{
+    margin-top: 100px;
+}
+
+.mission-ik::after{
+    content: "";
+    width: 350px;
+    height: 6px;
+    background-color: #0077ff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 25px;
+    /* border-radius: 10%; */
+    position: absolute;
 }
 @media screen and (max-width:768px) {
     .card-ik, .card2-ik{
@@ -56,5 +93,8 @@
     .custom-padding-ik{
         padding: 0 8px !important;
     }
+   .hero-ik{
+       height: auto;
+   }
     
 }
