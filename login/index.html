@@ -24,21 +24,28 @@ session_start();
 </head>
 <body>
     <div class="container-fluid bg-dark text-white">
-        <div class="header">
-            <div class="h1 p-2">
-                <h1>Iwakili</h1>
-            </div>
-            <div class="icons">
-                <i class="fa fa-home fa-fw text-white"></i>
-                <i class="fa fa-clipboard-list fa-fw text-white"></i>
-                <i class="fa fa-highlighter fa-fw text-white"></i>
-                <i class="fa fa-user-friends fa-fw text-white"></i>
-                <i class="fa fa-bell fa-fw text-white"></i>
-            </div>
-            <div class="search">
-                <input type="search" name="search" id="search" class="bg-black" placeholder="search">
-                <button class="mybtns">learn-more + </button>
-                <span class="iconify" data-icon="bi:person-circle" style="color: #99f;"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 ">
+                    <h1>Iwakili</h1>
+                </div>
+                <div class="col-sm-4">
+                    <div class="-container-fluid d-flex justify-content-around align-items-center height">
+                        <i class="fa fa-home fa-fw  size- px-5 text-white"></i>
+                        <i class="fa fa-clipboard-list fa-fw  size- px-5 text-white"></i>
+                        <i class="fa fa-highlighter fa-fw  size- px-5 text-white"></i>
+                        <i class="fa fa-user-friends fa-fw  size- px-5 text-white"></i>
+                        <i class="fa fa-bell fa-fw  size- px-5 text-white"></i>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="container-fluid d-flex justify-content-between align-items-center height">
+                        <input type="search" name="search" id="search" class="bg-black" placeholder="search">
+                        <button class="mybtns">learn-more + </button>
+                        <span class="iconify" data-icon="bi:person-circle" style="color: #99f;"></span>
+                        <a href=""><button class="btn btn-danger">Add Question</button></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
