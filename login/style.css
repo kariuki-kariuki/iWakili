@@ -88,3 +88,16 @@ body{
 .content{
     height: 100vh;
 }
+
+.borders{
+    border-radius: 50%;
+}
+
+.item1{
+    width: fit-content;
+    padding: 10px;
+}
+
+.item1:hover{
+    background-color: rgb(56, 50, 50);
+}
