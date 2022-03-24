@@ -14,7 +14,7 @@
         $responder_id = $user_data['user_id'];
         // echo $answer, $question_id, $responder_id;
         if (!empty($answer) && !empty($question_id) && !empty($responder_id)){
-            $answer_id = randomAns(19);
+            $answer_id = randomAns(13);
             $queryys = "insert into answers (answer, question_id, responder_id, answer_id) values ('$answer', '$question_id', '$responder_id', $answer_id)";
             
             mysqli_query($con,  $queryys);

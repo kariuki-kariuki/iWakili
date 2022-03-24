@@ -16,19 +16,19 @@
 
     }
 
-    function randomAns($leng){
+    function randomAns($ans){
 
-        $text = "";
-        if ($leng < 5){
-            $leng = 5;
+        $txt = "";
+        if ($ans < 5){
+            $ans = 5;
         }
 
-        $len = rand(4, $leng);
+        $lengs = rand(4, $ans);
 
-        for ($i = 0; $i < $len; $i++){
+        for ($i = 0; $i < $lengs; $i++){
             # code... 
-            $text .= rand(0, 8);
+            $txt .= rand(0, 8);
         }
-        return $text;
+        return $txt;
 
     }

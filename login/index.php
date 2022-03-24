@@ -1,9 +1,10 @@
-<!-- <?php
-session_start();
+<?php
+    session_start();
     include("connection.php");
     include("functions.php");
     $user_data = check_login($con);
-?> -->
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +35,8 @@ session_start();
                     <div class="col-sm-4">
                         <div class="-container-fluid d-flex justify-content-around align-items-center height">
                             <i class="fa fa-home fa-fw  size- px-5 text-white"></i>
-                            <i class="fa fa-clipboard-list fa-fw  size- px-5 text-white"></i>
-                            <i class="fa fa-highlighter fa-fw  size- px-5 text-white"></i>
+                            <a href="../questions/questions.php"><i class="fa fa-clipboard-list fa-fw  size- px-5 text-white"></i></a>
+                            <a href="../questions/displayq.php"><i class="fa fa-highlighter fa-fw  size- px-5 text-white"></i></a>
                             <i class="fa fa-user-friends fa-fw  size- px-5 text-white"></i>
                             <i class="fa fa-bell fa-fw red size- px-5 "></i>
                         </div>
@@ -45,7 +46,7 @@ session_start();
                             <input type="search" name="search" id="search" class="bg-black" placeholder="search">
                             <button class="mybtns">learn-more + </button>
                             <span class="iconify" data-icon="bi:person-circle" style="color: #99f;"></span>
-                            <a href=""><button class="btn btn-danger">Add Question</button></a>
+                            <a href="logout.php"><button class="btn btn-danger">Log Out</button></a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +62,9 @@ session_start();
                             <div class="image pb-5 text-center text-white">
                                 <div class="image pb-3">
                                     <img src="../Images/confidential.png" alt="" class="img-fluid profile-img bg-black">
-                                    <p class="pt-2">Martin Kariuki</p>
+                                    <p class="pt-2">
+                                        <?php echo $user_data["user_name"]; ?>
+                                    </p>
         
                                 </div>
                                 <div class="proffession">
@@ -70,6 +73,8 @@ session_start();
                                 <div class="about">
                                     <p>I am an alumni of moringa school passionate in Software development and anything tech</p>
                                 </div>
+                                <br><br>
+                                <a href="../profile/profile.php"><button class="btn btn-primary">Edit</button></a>
                             </div>
         
         
@@ -90,7 +95,7 @@ session_start();
                         </div>
                         <div class="container-fluid answers bg-dark pt-2 mb-2">
                             <div class="poster">
-                                <img src="../images/man-lawyer1.png" alt="" width="50px" height="50px" class="img-fluid borders">
+                                <img src="../services_images/man-lawyer1.png" alt="" width="50px" height="50px" class="img-fluid borders">
                             </div>
                             <div class="answer-text py-2">
                                 <h3 class="question">
@@ -109,7 +114,7 @@ session_start();
 
                         <div class="container-fluid answers bg-dark pt-2 mb-2">
                             <div class="poster">
-                                <img src="../images/man-lawyer1.png" alt="" width="50px" height="50px" class="img-fluid borders">
+                                <img src="../services_images/man-lawyer1.png" alt="" width="50px" height="50px" class="img-fluid borders">
                             </div>
                             <div class="answer-text py-2">
                                 <h3 class="question">

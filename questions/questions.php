@@ -13,12 +13,14 @@
         $poster_id = $user_data['user_id'];
         echo $poster_id, $question;
         if (!empty($question)){
-            $question_id = randomId(17);
+            // $question_id = randomId(17);
+            $question_id = random_num(10);
+
             echo $question_id;
             $querys = "insert into questions (question, question_id, poster_id) values ('$question', '$question_id', '$poster_id')";
             
             mysqli_query($con,  $querys);
-            header("Location: ../login/index.php");
+            header("Location: displayq.php");
             die;
         } else {
 
