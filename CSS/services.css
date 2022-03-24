@@ -80,7 +80,7 @@ background-color: lightgray;
   }
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
-    .moringa  {
+    .moringa {
       width: 100%;
       display: block;
       margin-bottom: 20px;
