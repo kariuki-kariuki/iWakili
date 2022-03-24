@@ -30,13 +30,13 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="name">Username<span>*</span></label>
-                        <input type="text" id="name" class="form-control form-control-alternative" placeholder="Username">
+                        <input name="name" type="text" id="name" class="form-control form-control-alternative" placeholder="Username">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="telephone">Telephone<span>*</span></label>
-                        <input type="number" id="telephone" class="form-control form-control-alternative" placeholder="+254700000000">
+                        <input name="telephone" type="number" id="telephone" class="form-control form-control-alternative" placeholder="+254700000000">
                       </div>
                     </div>
                   </div>
@@ -50,49 +50,50 @@
                     <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label">Location<span>*</span></label>
-                          <input id="location" class="form-control form-control-alternative"  placeholder="user's Location" type="text">
+                          <input name="location" id="location" class="form-control form-control-alternative"  placeholder="user's Location" type="text">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <label class="form-control-label" for="date">Date<span>*</span></label>
-                        <input id="date" class="form-control form-control-alternative" type="date">
+                        <input name="date" id="date" class="form-control form-control-alternative" type="date">
                       </div>
                  </div>
                     <br>
                       <div class="form-group col-lg-6">
                             <label class="form-control-label">Topic<span>*</span></label>
                             <br>
-                        <select id="topic" class="form-control">
-                                <option value="">[Choose One]</option>
-                                <option value="">Accident</option>
-                                <option vaue="">Banking</option>
-                                <option value="">Business</option>
-                                <option value="">Civil</option>
-                                <option value="">Consumer Protection</option>
-                                <option value="">Criminal</option>
-                                <option value="">Environmental</option>
-                                <option value="">Family</option>
-                                <option value="">Human Rights</option>
-                                <option value="">Information Technology</option>
-                                <option value="">Insurance</option>
-                                <option value="">Intellectual Property</option>
-                                <option value="">labour</option>
-                                <option value="">Motor Vehicle</option>
-                                <option value="">Notary</option>
-                                <option value="">Property</option>
-                                <option value="">Tax</option>
+                        <select name="topic" id="topic" class="form-control">
+                                <option value="one">[Choose One]</option>
+                                <option value="two">Accident</option>
+                                <option vaue="one">Banking</option>
+                                <option value="two">Business</option>
+                                <option value="one">Civil</option>
+                                <option value="two">Consumer Protection</option>
+                                <option value="one">Criminal</option>
+                                <option value="two">Environmental</option>
+                                <option value="one">Family</option>
+                                <option value="two">Human Rights</option>
+                                <option value="one">Information Technology</option>
+                                <option value="two">Insurance</option>
+                                <option value="one">Intellectual Property</option>
+                                <option value="two">labour</option>
+                                <option value="one">Motor Vehicle</option>
+                                <option value="two">Notary</option>
+                                <option value="one">Property</option>
+                                <option value="two">Tax</option>
                             </select>  
                        </div>
+                      
+                       
                 
-                <button class="btn btn-primary" onclick="formValidation()">Submit </button>
+                <button class="btn btn-primary" value="getHireDetails" onclick="formValidation()">Submit </button>
               </form>
         </div>
 
         <!-- Display -->
         <div class="col">
-            <div class="box" id="display">
-              <p>DEAR <span class="username">Achieng,<br></span>YOUR CASE WILL BE HANDLE BY<br><span class="court">Lorem, ipsum advocates company.</span>.</p>
-              <h6>Receipt No.<span id="track"></span> </h6>
+            <div class="box" id="hidden-display">
+              <div id="display"></div>
               <p>Our Team will reach out to you for more Information.</p>
                <img src="../Images/lawyer.png">
                 <div class="button">

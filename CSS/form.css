@@ -5,7 +5,7 @@
 form {
     border: 1px solid grey;
     width: 700px;
-    height: 510px;
+    height: 550px;
     box-shadow: 3px 3px 5px grey;
     margin-left: 10%;
     margin-top: 7%;
@@ -28,22 +28,30 @@ label span {
 
 .btn {
     margin-left: 40%;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 .box {
     width: 400px;
-    height: 550px;
+    height: 500px;
     border: 1px solid grey;
     box-shadow: 3px 3px 5px grey;
     float: right;
     margin-right: 10%;
     margin-top: 10%;
+    display: none;
+}
+
+.box #display{
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+    color: teal;
 }
 
 .box p {
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 60px;
     text-align: center;
 }
 

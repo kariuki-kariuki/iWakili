@@ -1,31 +1,3 @@
-// // Business Logic
-function Hire (username,telephone,location,date,topic) {
-    this.username = inputUsername;
-    this.topic = inputTopic
-}
-
-function resetFields() {
-    var inputtedLocation = $("#inputLocation").val("");
-    var inputtedDate= $("#inputDate").val("");
-    var inputtedTopic = $("#inputTopic").val("");
-}
-
-function genRandId(){
-    var rand = Math.floor(Math.random() * 88)
-    return `P${rand}-U`
-}
-function genOrderId(){
-    var rand = Math.floor(Math.random() * 77)
-    return `P${rand}-P`
-}
-
-var reset = function(){
-    location.reload();
-} 
-
-
-
-// USER INTERFACE LOGIC
 
 
 function formValidation(){
@@ -52,11 +24,36 @@ function formValidation(){
         let date = document.getElementById("date").value;
         let topic = document.getElementById("topic").value;
         
+        getHireDetails(name,telephone,location,date,topic)
     }
 
     let display = document.getElementById("display")
 
+    let getHireDetails = function(topic){
+        display.innerHTML = ""
+        if(topic === "one"){
+            display.innerHTML = `<p>Dear<strong>${nameData}</strong>, \n YOUR CASE WILL BE HANDLE BY<strong>Lorem Ipsum Advocates Company.</p>`
+
+        }else if(topic === "two"){
+            display.innerHTML = `<p>Dear<strong>${nameData}</strong>, \n YOUR CASE WILL BE HANDLE BY<strong>Ipsum Lorem Advocates Company.</p>`
+        }
+        unhideElement()
+
+    }
+
+
+    let hideElement = function(){
+        var x = document.getElementById("hidden-display");
+        x.style.display = "none";
+    }
+
+    let unhideElement = function() {
+        var x = document.getElementById("hidden-display");
+        x.style.display = "block";
+    }
+
     let reset = function(){
-         location.reload();
+        hideElement()
+         // location.reload();
          
      }
