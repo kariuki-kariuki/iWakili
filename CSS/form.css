@@ -5,7 +5,7 @@
 form {
     border: 1px solid grey;
     width: 700px;
-    height: 520px;
+    height: 510px;
     box-shadow: 3px 3px 5px grey;
     margin-left: 10%;
     margin-top: 7%;
@@ -51,8 +51,13 @@ label span {
     color: teal;
 }
 
+.box h6 {
+    padding-left: 80px;
+}
 .box img {
-    margin-left: 55px;
+    margin-left: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 .box .button {

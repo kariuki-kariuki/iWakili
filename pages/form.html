@@ -17,7 +17,7 @@
 <body>
     <div class="row">
         <div class="col">
-            <form>
+            <form id="form">
                 <h3 class=" text-center">
                   HIRE AN ADVOCATE
               </h3> 
@@ -29,14 +29,14 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-username">Username<span>*</span></label>
-                        <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Username">
+                        <label class="form-control-label" for="name">Username<span>*</span></label>
+                        <input type="text" id="name" class="form-control form-control-alternative" placeholder="Username">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Telephone<span>*</span></label>
-                        <input type="number" id="input-telephone" class="form-control form-control-alternative" placeholder="+254700000000">
+                        <label class="form-control-label" for="telephone">Telephone<span>*</span></label>
+                        <input type="number" id="telephone" class="form-control form-control-alternative" placeholder="+254700000000">
                       </div>
                     </div>
                   </div>
@@ -49,13 +49,13 @@
                  <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-proffession">Location<span>*</span></label>
-                          <input id="input-location" class="form-control form-control-alternative"  placeholder="user's Location" type="text">
+                          <label class="form-control-label">Location<span>*</span></label>
+                          <input id="location" class="form-control form-control-alternative"  placeholder="user's Location" type="text">
                         </div>
                       </div>
                       <div class="col-lg-6">
-                        <label class="form-control-label" for="input-date">Date<span>*</span></label>
-                        <input id="input-date" class="form-control form-control-alternative" type="date">
+                        <label class="form-control-label" for="date">Date<span>*</span></label>
+                        <input id="date" class="form-control form-control-alternative" type="date">
                       </div>
                  </div>
                     <br>
@@ -84,19 +84,20 @@
                             </select>  
                        </div>
                 
-                <button class="btn btn-primary">Submit </button>
+                <button class="btn btn-primary" onclick="formValidation()">Submit </button>
               </form>
         </div>
 
         <!-- Display -->
         <div class="col">
-            <div class="box">
+            <div class="box" id="display">
               <p>DEAR <span class="username">Achieng,<br></span>YOUR CASE WILL BE HANDLE BY<br><span class="court">Lorem, ipsum advocates company.</span>.</p>
+              <h6>Receipt No.<span id="track"></span> </h6>
               <p>Our Team will reach out to you for more Information.</p>
                <img src="../Images/lawyer.png">
                 <div class="button">
                     <button class="btn btn-success" id="confirm">Confirm</button>
-                    <button class="btn btn-danger" id="confirm">Cancel</button>
+                    <button class="btn btn-danger" id="cancel" onclick="reset()">Cancel</button>
                 </div>
             </div>
         </div>
