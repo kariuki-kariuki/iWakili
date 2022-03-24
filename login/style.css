@@ -14,6 +14,11 @@
     border: 1px solid white;
 }
 
+.body{
+    overflow: hidden;
+    height: 100vh;
+}
+
 .size-{
     font-size: 2em;
 }
@@ -44,6 +49,10 @@
     border: 1px solid blue;
 }
 
+body{
+    overflow: hidden;
+}
+
 .red{
     color:  #ff0000;
 }
@@ -58,6 +67,7 @@
     background: linear-gradient(180deg, blue 35%, black 35%);
 }
 
+
 .another{
     height: 86vh;
 }
@@ -71,6 +81,10 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background: black;
+    background: #ff0000;
     border-radius: 2px;
+}
+
+.content{
+    height: 100vh;
 }
