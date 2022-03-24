@@ -62,7 +62,7 @@
     content: "";
     width: 200px;
     height: 6px;
-    background-color: #0077ff;
+    background-color:teal;
     left: 0;
     right: 0;
     bottom: 0;
@@ -70,15 +70,21 @@
     /* border-radius: 10%; */
     position: absolute;
 }
-.about-us{
+#about-us{
     margin-top: 100px;
+    
+}
+#about-us h3{
+    color: black;
+    /* padding-top: 50px; */
+    
 }
 
 .mission-ik::after{
     content: "";
     width: 350px;
     height: 6px;
-    background-color: #0077ff;
+    background-color:teal;
     left: 0;
     right: 0;
     bottom: 0;
