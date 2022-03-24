@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.fifty{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.one{
+    height: 100vh;
+}
+
