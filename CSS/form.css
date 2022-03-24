@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+form {
+    border: 1px solid grey;
+    width: 700px;
+    height: 550px;
+    box-shadow: 3px 3px 5px grey;
+    margin-left: 10%;
+    margin-top: 7%;
+}
+
+h3 {
+    color: teal;
+    font-weight: 500;
+    padding-top: 2.5%;
+}
+
+label {
+    padding-left: 10px;
+}
+
+label span {
+    color: red;
+}
+
+
+.btn {
+    margin-left: 40%;
+    margin-top: 4%;
+}
+
+.box {
+    width: 400px;
+    height: 500px;
+    border: 1px solid grey;
+    box-shadow: 3px 3px 5px grey;
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+    display: none;
+}
+
+.box #display{
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+    color: teal;
+}
+
+.box p {
+    font-weight: bold;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.box p span {
+    color: teal;
+}
+
+.box h6 {
+    padding-left: 80px;
+}
+.box img {
+    margin-left: 100px;
+    height: 150px;
+    width: 150px;
+}
+
+.box .button {
+    display: flex;
+    flex-direction: row;
+}
+
+.box .btn-success {
+    margin-left: 30%;
+}
+
+.box .btn-danger {
+    margin-left: 5px;
+}
