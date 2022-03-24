@@ -2,8 +2,8 @@
     session_start();
     include("../login/connection.php");
     include("../login/functions.php");
-    include("qfunctions.php");
-    include("qconnection.php");
+    include("pfunctions.php");
+    include("pconnection.php");
     $user_data = check_login($con);
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
