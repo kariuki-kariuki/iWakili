@@ -101,3 +101,7 @@ body{
 .item1:hover{
     background-color: rgb(56, 50, 50);
 }
+
+.ans{
+    font-size: 1vh;
+}

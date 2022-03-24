@@ -11,7 +11,7 @@
         $password = $_POST['psswd'];
          echo $full_name, $user_name, $password;
         if (!empty($user_name)  && !empty($password) && !is_numeric($user_name ) && !empty($full_name)){
-            $user_id = random_num(20);
+            $user_id = random_num(15);
             $query = "insert into users (user_id, user_name, full_name, password) values ('$user_id', '$user_name', '$full_name', '$password')";
             
             mysqli_query($con,  $query);
