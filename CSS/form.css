@@ -5,10 +5,16 @@
 form {
     border: 1px solid grey;
     width: 700px;
-    height: 500px;
+    height: 520px;
     box-shadow: 3px 3px 5px grey;
     margin-left: 10%;
     margin-top: 7%;
+}
+
+h3 {
+    color: teal;
+    font-weight: 500;
+    padding-top: 2.5%;
 }
 
 label {
@@ -19,12 +25,45 @@ label span {
     color: red;
 }
 
-select {
-    width: 500px;
-    height:37px;
-}
 
 .btn {
     margin-left: 40%;
-    margin-top: 3%;
+    margin-top: 2%;
+}
+
+.box {
+    width: 400px;
+    height: 550px;
+    border: 1px solid grey;
+    box-shadow: 3px 3px 5px grey;
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+
+.box p {
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.box p span {
+    color: teal;
+}
+
+.box img {
+    margin-left: 55px;
+}
+
+.box .button {
+    display: flex;
+    flex-direction: row;
+}
+
+.box .btn-success {
+    margin-left: 30%;
+}
+
+.box .btn-danger {
+    margin-left: 5px;
 }
