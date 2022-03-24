@@ -5,33 +5,34 @@
     $user_data = check_login($con);
 
   // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "iwakili_login");
-
-  // Initialize message variable
-  $msg = "";
-
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-  	// Get image name
-  	$image = $_FILES['image']['name'];
-  	// Get text
-	$user_id = $user_data['user_id'];
-  	$image_text = mysqli_real_escape_string($db, $_POST['text']);
-
-  	// image file directory
-  	$target = "../images-uploads/".basename($image);
-
-  	$sql = "INSERT INTO profile (image, text, user_id) VALUES ('$image', '$image_text', $user_id)";
-  	// execute query
-  	mysqli_query($db, $sql);
-
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-  		$msg = "Image uploaded successfully";
-  	}else{
-  		$msg = "Failed to upload image";
+  	$db = mysqli_connect("localhost", "root", "", "iwakili_login");
+	
+  	// Initialize message variable
+  	$msg = "";
+	
+  	// If upload button is clicked ...
+  	if (isset($_POST['upload'])) {
+  		// Get image name
+  		$image = $_FILES['image']['name'];
+  		// Get text
+		$user_id = $user_data['user_id'];
+  		$image_text = mysqli_real_escape_string($db, $_POST['text']);
+  		$image_text2 = mysqli_real_escape_string($db, $_POST['text2']);
+	
+  		// image file directory
+  		$target = "../images-uploads/".basename($image);
+	
+  		$sql = "INSERT INTO profile (image, text, user_id, location) VALUES ('$image', '$image_text', '$user_id', '$image_text2')";
+  		// execute query
+  		mysqli_query($db, $sql);
+	
+  		if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+  			$msg = "Image uploaded successfully";
+  		}else{
+  			$msg = "Failed to upload image";
+  		}
   	}
-  }
-  $result = mysqli_query($db, "SELECT * FROM profile");
+  	$result = mysqli_query($db, "SELECT * FROM profile");
 ?>
 
 <!DOCTYPE html>
@@ -91,4 +92,4 @@
 </body>
 </html>
 
-</body>
+</body
